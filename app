@@ -1,5 +1,6 @@
 server {
-    listen 80;
+    listen 80 listen for ipv4;
+    linten [::]:80 default ipv6only=on;
     server_name 18.116.63.36;
     error_log /home/ubuntu/agent/workspace/test-deploy/logs/error.log;
     access_log /home/ubuntu/agent/workspace/test-deploy/logs/access.log;
