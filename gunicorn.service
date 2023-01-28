@@ -1,0 +1,28 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+Type=notify
+# the specific user that our service will run as
+# --worker-class /home/ubuntu/agent/workspace/test-deploy/venv/lib/python3.10/site-packages/uvicorn/workers.py\
+User=root
+Group=www-data
+RuntimeDirectory=gunicorn
+WorkingDirectory=/home/ubuntu/agent/workspace/test-deploy
+ExecStart=home/ubuntu/agent/workspace/test-deploy/venv/bin/gunicorn \
+--error-logfile /home/ubuntu/agent/workspace/test-deploy/logs/error.log \
+--workers 4 \
+--capture-output --log-level debug \
+--worker-class uvicorn.workers.UvicornWorker \
+--bind unix:/run/gunicorn.sock \
+main:app
+
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

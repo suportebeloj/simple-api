@@ -12,5 +12,12 @@ pipeline {
                 """
             }
         }
+        stage ('Setup gunicorn service') {
+            steps {
+                sh """
+                chmod +x gunicorn.sh
+                ./gunicorn.sh"""
+            }
+        }
     }
 }
