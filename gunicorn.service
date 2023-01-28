@@ -10,10 +10,11 @@ Type=notify
 User=root
 Group=www-data
 WorkingDirectory=/home/ubuntu/agent/workspace/test-deploy
-ExecStart=home/ubuntu/agent/workspace/test-deploy/venv/bin/gunicorn \
+ExecStart=/home/ubuntu/agent/workspace/test-deploy/venv/bin/gunicorn \
 --error-logfile /home/ubuntu/agent/workspace/test-deploy/logs/error.log \
 --workers 4 \
 --capture-output --log-level debug \
+--worker-class uvicorn.workers.UvicornWorker \
 --bind unix:/run/gunicorn.sock \
 main:app
 
