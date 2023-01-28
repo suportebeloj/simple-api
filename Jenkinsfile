@@ -6,7 +6,10 @@ pipeline {
     stages {
         stage ('Build environ') {
             steps {
-                echo 'build complet'
+                sh """
+                chmod +x environment.sh
+                ./environment.sh
+                """
             }
         }
     }
