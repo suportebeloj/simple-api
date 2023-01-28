@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name 18.116.63.36;
+    server_name bot.plutusfi.io;
     error_log /home/ubuntu/agent/workspace/test-deploy/logs/error.log;
     access_log /home/ubuntu/agent/workspace/test-deploy/logs/access.log;
 
