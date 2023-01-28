@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo cp -rf app /etc/nginx/sites-available
+sudo cp -rf app /etc/nginx/sites-enabled/
 
 sudo nginx -t
 
