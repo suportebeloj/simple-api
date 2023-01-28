@@ -9,10 +9,10 @@ echo "$USER"
 echo "$PWD"
 
 sudo systemctl daemon-reload
-sudo systemctl start gunicorn
-sudo systemctl enable gunicorn
+sudo systemctl start gunicorn.socket
+sudo systemctl enable gunicorn.socket
 
 echo "Gunicorn started"
 
-sudo systemctl status gunicorn
-sudo systemctl restart gunicorn
+sudo systemctl status gunicorn.socket
+sudo systemctl restart gunicorn.socket
