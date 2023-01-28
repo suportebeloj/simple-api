@@ -9,7 +9,6 @@ Type=notify
 # --worker-class /home/ubuntu/agent/workspace/test-deploy/venv/lib/python3.10/site-packages/uvicorn/workers.py\
 User=root
 Group=www-data
-RuntimeDirectory=gunicorn
 WorkingDirectory=/home/ubuntu/agent/workspace/test-deploy
 ExecStart=home/ubuntu/agent/workspace/test-deploy/venv/bin/gunicorn \
 --error-logfile /home/ubuntu/agent/workspace/test-deploy/logs/error.log \
