@@ -19,5 +19,13 @@ pipeline {
                 ./gunicorn.sh"""
             }
         }
+        stage('Setup nginx') {
+            steps {
+                sh """
+                chmod +x nginx.sh
+                ./nginx.sh
+                """
+            }
+        }
     }
 }
