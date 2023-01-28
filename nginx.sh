@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo cp -rf app /etc/nginx/sites-available/app
+sudo cp -rf bot.plutusfi.io /etc/nginx/sites-available/bot.plutusfi.io
 chmod 710 $PWD
 
 sudo ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled
