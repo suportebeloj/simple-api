@@ -18,10 +18,5 @@ ExecStart=home/ubuntu/agent/workspace/test-deploy/venv/bin/gunicorn \
 --bind unix:/run/gunicorn.sock \
 main:app
 
-ExecReload=/bin/kill -s HUP $MAINPID
-KillMode=mixed
-TimeoutStopSec=5
-PrivateTmp=true
-
 [Install]
 WantedBy=multi-user.target
