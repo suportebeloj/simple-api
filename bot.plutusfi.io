@@ -1,7 +1,7 @@
 server {
     listen 80;
     listen [::]:80;
-    server_name backend.mm.plutusfi.io;
+    server_name mm.plutusfi.io;
     error_log /home/ubuntu/agent/workspace/test-deploy/logs/error.log;
     access_log /home/ubuntu/agent/workspace/test-deploy/logs/access.log;
 
